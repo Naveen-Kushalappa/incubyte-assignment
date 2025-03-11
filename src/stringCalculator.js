@@ -14,6 +14,13 @@ const stringCalculator = (input) => {
         cleanedInput = _.join(_.tail(cleanedInput), '');
     }
     const inputArray = _.split(cleanedInput, delimiter);
+
+    const hasNegative = _.some(inputArray, n => n < 0);
+    if (hasNegative) {
+        const negativeNumbers = _.filter(inputArray, n => n < 0);
+        throw new Error(`negative numbers not allowed ${negativeNumbers}`);
+    }
+
     return _.reduce(inputArray, (sum, value) => {
         return sum + parseInt(value);
     }, 0);
