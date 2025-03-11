@@ -6,6 +6,7 @@
     "test": "mocha"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "mocha": "^11.1.0"
   },
   "description": "Repo contains the assignment submission for Incubyte. Approach taken is TDD.",

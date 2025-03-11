@@ -10,21 +10,21 @@ describe('Test suite',  () => {
 
     describe('String calculator' , () => {
         it('Check string calculator for empty input', () => {
-            const string = '1';
-            const stringCalculatorResponse = stringCalculator(string);
+            const stringInput = "";
+            const stringCalculatorResponse = stringCalculator(stringInput);
             assert.equal(stringCalculatorResponse, 0);
         });
 
         it('Check string calculator for single input', () => {
-            const string = '1';
-            const stringCalculatorResponse = stringCalculator(string);
+            const stringInput = '1';
+            const stringCalculatorResponse = stringCalculator(stringInput);
             assert.equal(stringCalculatorResponse, 1);
         });
 
 
         it('Check string calculator for simple input', () => {
-            const string = '1,5';
-            const stringCalculatorResponse = stringCalculator(string);
+            const stringInput = '1,5';
+            const stringCalculatorResponse = stringCalculator(stringInput);
             assert.equal(stringCalculatorResponse, 6);
         })
     })
