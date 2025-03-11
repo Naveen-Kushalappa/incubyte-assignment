@@ -36,7 +36,7 @@ describe('Test suite',  () => {
         });
 
         it('Check if new lines are accepted ', () => {
-            const stringInput = '1,\n3,5';
+            const stringInput = '1,\n3,5\n';
             const stringCalculatorResponse = stringCalculator(stringInput);
             assert.equal(stringCalculatorResponse, 9);
         });
