@@ -5,7 +5,9 @@ const stringCalculator = (input) => {
         return 0;
     }
 
-    const inputArray = _.split(input, ',');
+    const cleanedInput = _.replace(input, /\n/g, '');
+    const inputArray = _.split(cleanedInput, ',');
+
     return _.reduce(inputArray, (sum, value) => {
         return sum + parseInt(value);
     }, 0);
