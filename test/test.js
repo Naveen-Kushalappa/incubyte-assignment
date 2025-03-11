@@ -29,11 +29,11 @@ describe('Test suite',  () => {
             assert.equal(stringCalculatorResponse, 6);
         })
 
-        // it('Check for any size of input ', () => {
-        //     const stringInput = _.times(10000000, () => _.random(1000, 5000)).join(',');
-        //     const stringCalculatorResponse = stringCalculator(stringInput);
-        //     assert.ok(stringCalculatorResponse); // Ensures result is truthy
-        // });
+        it('Check for any size of input ', () => {
+            const stringInput = _.times(10000000, () => _.random(1000, 5000)).join(',');
+            const stringCalculatorResponse = stringCalculator(stringInput);
+            assert.ok(stringCalculatorResponse); // Ensures result is truthy
+        });
 
         it('Check if new lines are accepted ', () => {
             const stringInput = '1,\n3,5\n';
