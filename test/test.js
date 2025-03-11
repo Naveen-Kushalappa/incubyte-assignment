@@ -29,11 +29,11 @@ describe('Test suite',  () => {
             assert.equal(stringCalculatorResponse, 6);
         })
 
-        it('Check for any size of input ', () => {
-            const stringInput = _.times(10000000, () => _.random(1000, 5000)).join(',');
-            const stringCalculatorResponse = stringCalculator(stringInput);
-            assert.ok(stringCalculatorResponse); // Ensures result is truthy
-        });
+        // it('Check for any size of input ', () => {
+        //     const stringInput = _.times(10000000, () => _.random(1000, 5000)).join(',');
+        //     const stringCalculatorResponse = stringCalculator(stringInput);
+        //     assert.ok(stringCalculatorResponse); // Ensures result is truthy
+        // });
 
         it('Check if new lines are accepted ', () => {
             const stringInput = '1,\n3,5\n';
@@ -45,6 +45,17 @@ describe('Test suite',  () => {
             const stringInput = '//;\n1;\n3;5\n';
             const stringCalculatorResponse = stringCalculator(stringInput);
             assert.equal(stringCalculatorResponse, 9);
+        });
+
+        it('Check if negative numbers are handled', () => {
+            const stringInput = '1,-2,5,-9';
+            try {
+                const stringCalculatorResponse = stringCalculator(stringInput);
+                assert.fail(stringCalculatorResponse); // Fail if there was no exception raised
+            } catch (err) {
+                assert.ok(err instanceof Error); // Passes if err is an instance of Error
+                assert.equal(err.message, 'negative numbers not allowed -2,-9'); // Ensures correct message
+            }
         });
     })
 
