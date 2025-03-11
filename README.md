@@ -11,4 +11,12 @@ npm install
 npm test
 ```
 
+### How to run individual test file
+```
+ node src/stringCalculator.js <input> 
+```
+Example: 
+```
+ node src/stringCalculator.js 1,5
+```
 
