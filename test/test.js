@@ -40,6 +40,12 @@ describe('Test suite',  () => {
             const stringCalculatorResponse = stringCalculator(stringInput);
             assert.equal(stringCalculatorResponse, 9);
         });
+
+        it('Check if custom delimiter is accepted ', () => {
+            const stringInput = '//;\n1;\n3;5\n';
+            const stringCalculatorResponse = stringCalculator(stringInput);
+            assert.equal(stringCalculatorResponse, 9);
+        });
     })
 
 });
