@@ -34,6 +34,12 @@ describe('Test suite',  () => {
             const stringCalculatorResponse = stringCalculator(stringInput);
             assert.ok(stringCalculatorResponse); // Ensures result is truthy
         });
+
+        it('Check if new lines are accepted ', () => {
+            const stringInput = '1,\n3,5';
+            const stringCalculatorResponse = stringCalculator(stringInput);
+            assert.equal(stringCalculatorResponse, 9);
+        });
     })
 
 });
