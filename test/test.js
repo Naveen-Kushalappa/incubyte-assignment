@@ -1,5 +1,6 @@
 const assert = require('assert');
 const stringCalculator = require('../src/stringCalculator');
+const _ = require("lodash");
 
 describe('Test suite',  () => {
     describe('Health check',  () => {
@@ -27,6 +28,12 @@ describe('Test suite',  () => {
             const stringCalculatorResponse = stringCalculator(stringInput);
             assert.equal(stringCalculatorResponse, 6);
         })
+
+        it('Check for any size of input ', () => {
+            const stringInput = _.times(10000000, () => _.random(1000, 5000)).join(',');
+            const stringCalculatorResponse = stringCalculator(stringInput);
+            assert.ok(stringCalculatorResponse); // Ensures result is truthy
+        });
     })
 
 });
